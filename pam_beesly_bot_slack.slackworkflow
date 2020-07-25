@@ -1,4 +1,5 @@
 {
+    "workflow_description": "This workflow is triggere anytime somebody joins a specific channel. This workflow walks users through how to use Slack, best practices, and shows them through interaction how to use tagging and channels.",
     "source_id": "311456347755395909",
     "version": "1",
     "workflow": {

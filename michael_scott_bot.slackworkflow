@@ -1,0 +1,465 @@
+{
+    "workflow_description": "This workflow is triggered by managers to create a Google like quarterly performance review and is intended to be triggered on a schedule. Once a manager completes their performance review, the direct report is required to share their views of the company's progress on various goals before their own performance review is revealed to them.",
+    "source_id": "311188234421941301",
+    "version": "1",
+    "workflow": {
+        "name": "Michael Scott Bot",
+        "blueprint": {
+            "version": "1",
+            "trigger": {
+                "type": "channel_action",
+                "id": "fa2665c7-636a-4982-a84c-9a9243d6e7c9",
+                "config": {
+                    "name": "Start Performance Review",
+                    "channels": [
+                        "G0179L0EB1Q"
+                    ],
+                    "callback_id": "4391b2f4-8059-434f-b8e0-f7fa8c4797cb",
+                    "description": "Start Performance Review"
+                }
+            },
+            "steps": [
+                {
+                    "type": "message",
+                    "id": "10e2b0b6-ff74-422b-a9ff-71a66a7ac323",
+                    "config": {
+                        "channel": {
+                            "ref": "fa2665c7-636a-4982-a84c-9a9243d6e7c9==channel"
+                        },
+                        "has_button": false,
+                        "message_text": "Starting performance review {{fa2665c7-636a-4982-a84c-9a9243d6e7c9==user}}  - Please head over to SlackBot to continue in private."
+                    }
+                },
+                {
+                    "type": "dialog",
+                    "id": "3b64d4ca-5d56-4c91-9add-89f513831f28",
+                    "config": {
+                        "user": {
+                            "ref": "fa2665c7-636a-4982-a84c-9a9243d6e7c9==user"
+                        },
+                        "dialog_title": "Performance Review",
+                        "dialog_elements": [
+                            {
+                                "name": "d3050841-b234-434d-b14d-cb1c8f7a318a",
+                                "type": "select",
+                                "label": "Direct Report",
+                                "optional": false,
+                                "data_source": "users"
+                            },
+                            {
+                                "name": "3b339960-586b-455b-b07f-7f42f5995d94",
+                                "type": "select",
+                                "label": "Osano-ness",
+                                "options": [
+                                    {
+                                        "label": "Superb",
+                                        "value": "Superb"
+                                    },
+                                    {
+                                        "label": "Strongly exceeds expectations",
+                                        "value": "Strongly exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Exceeds expectations",
+                                        "value": "Exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Meets expectations",
+                                        "value": "Meets expectations"
+                                    },
+                                    {
+                                        "label": "Needs improvement",
+                                        "value": "Needs improvement"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "870b81b1-181f-4e13-99fc-b82b74edc187",
+                                "type": "select",
+                                "label": "Problem Solving",
+                                "options": [
+                                    {
+                                        "label": "Superb",
+                                        "value": "Superb"
+                                    },
+                                    {
+                                        "label": "Strongly exceeds expectations",
+                                        "value": "Strongly exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Exceeds expectations",
+                                        "value": "Exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Meets expectations",
+                                        "value": "Meets expectations"
+                                    },
+                                    {
+                                        "label": "Needs improvement",
+                                        "value": "Needs improvement"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "ed2a63fa-1a3f-449c-80be-690d606bcc1d",
+                                "type": "select",
+                                "label": "Execution",
+                                "options": [
+                                    {
+                                        "label": "Superb",
+                                        "value": "Superb"
+                                    },
+                                    {
+                                        "label": "Strongly exceeds expectations",
+                                        "value": "Strongly exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Exceeds expectations",
+                                        "value": "Exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Meets expectations",
+                                        "value": "Meets expectations"
+                                    },
+                                    {
+                                        "label": "Needs improvement",
+                                        "value": "Needs improvement"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "e8441f65-81f2-4c45-b887-e5d1b5936de6",
+                                "type": "select",
+                                "label": "Thought Leadership",
+                                "options": [
+                                    {
+                                        "label": "Superb",
+                                        "value": "Superb"
+                                    },
+                                    {
+                                        "label": "Strongly exceeds expectations",
+                                        "value": "Strongly exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Exceeds expectations",
+                                        "value": "Exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Meets expectations",
+                                        "value": "Meets expectations"
+                                    },
+                                    {
+                                        "label": "Needs improvement",
+                                        "value": "Needs improvement"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "be72ea52-f2bc-43b4-8795-cdec8f250ea9",
+                                "type": "select",
+                                "label": "Leadership",
+                                "options": [
+                                    {
+                                        "label": "Superb",
+                                        "value": "Superb"
+                                    },
+                                    {
+                                        "label": "Strongly exceeds expectations",
+                                        "value": "Strongly exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Exceeds expectations",
+                                        "value": "Exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Meets expectations",
+                                        "value": "Meets expectations"
+                                    },
+                                    {
+                                        "label": "Needs improvement",
+                                        "value": "Needs improvement"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "885808cf-99c2-4cc5-87b0-dbb56f3fb4f1",
+                                "type": "select",
+                                "label": "Presence",
+                                "options": [
+                                    {
+                                        "label": "Superb",
+                                        "value": "Superb"
+                                    },
+                                    {
+                                        "label": "Strongly exceeds expectations",
+                                        "value": "Strongly exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Exceeds expectations",
+                                        "value": "Exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Meets expectations",
+                                        "value": "Meets expectations"
+                                    },
+                                    {
+                                        "label": "Needs improvement",
+                                        "value": "Needs improvement"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "8ce397c9-10d5-46d1-bd5c-4195df2a630c",
+                                "type": "textarea",
+                                "label": "Where have they excelled?",
+                                "optional": false
+                            },
+                            {
+                                "name": "4f769ff2-0e3a-4600-b577-ca745b468d90",
+                                "type": "textarea",
+                                "label": "Where do they need to improve?",
+                                "optional": false
+                            },
+                            {
+                                "name": "b3d60813-d4c1-4bcc-ad17-113e19259b64",
+                                "type": "textarea",
+                                "label": "🔒 Anything else? (confidential)",
+                                "optional": true
+                            }
+                        ],
+                        "dialog_submit_label": "",
+                        "delivery_button_label": "Show The Form",
+                        "delivery_message_text": "*These Performance Reviews use a scale of:*\n\nSuperb, Strongly exceeds expectations, Exceeds expectations, Meets expectations, Needs improvement\n\n*These reviews focus on six areas:*\n\n*Osanoness:* _How well this person lives up to the core values that we set as a company._\n\n*Problem Solving:* _Analytical skills applied to work situations._\n\n*Execution:* _High quality work with little guidance. Delivering great work without a lot of hand-holding needed from managers and peers. Autonomy._\n\n*Thought Leadership:* _How much an employee is seen as a reference for a given niche or expertise._\n\n*Leadership (or emerging leadership):* _Even if the role does not require leadership, we want to see leadership skills developing such as taking the lead of problems, projects, being pro-active, and owning results personally._\n\n*Presence:* _The individual's ability to make themselves heard in a busy and growing organization._\n\nAll questions are required. Questions with a :lock: are confidential and will not be shared with your direct report.\n\n:warning: Performance reviews can *not* be edited once you have submitted the form."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "a84d3ca9-cda8-47e4-8bcc-0818c6285c29",
+                    "config": {
+                        "user": {
+                            "ref": "fa2665c7-636a-4982-a84c-9a9243d6e7c9==user"
+                        },
+                        "has_button": false,
+                        "message_text": "All done. Thanks! If you have any more direct reports, just head back to #managers using the link below and hit the :lightning_outline: button again. https://osano.slack.com/archives/G0179L0EB1Q"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "4cb744df-ad44-45f3-986c-17fbb2a68e6b",
+                    "config": {
+                        "channel": {
+                            "ref": "fa2665c7-636a-4982-a84c-9a9243d6e7c9==channel"
+                        },
+                        "has_button": false,
+                        "message_text": "{{fa2665c7-636a-4982-a84c-9a9243d6e7c9==user}}  just completed a performance review. Nice work!"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "b470f256-16ee-4963-9008-89463e6dc111",
+                    "config": {
+                        "channel": {
+                            "value": "G016UUS9JTH"
+                        },
+                        "has_button": false,
+                        "message_text": "{{fa2665c7-636a-4982-a84c-9a9243d6e7c9==user.name}} completed a performance review of {{3b64d4ca-5d56-4c91-9add-89f513831f28==d3050841-b234-434d-b14d-cb1c8f7a318a==user.name}}\n\n*:arrow_right: Osanoness:* {{3b64d4ca-5d56-4c91-9add-89f513831f28==3b339960-586b-455b-b07f-7f42f5995d94==text}}\n\n*:arrow_right: Problem Solving:* {{3b64d4ca-5d56-4c91-9add-89f513831f28==870b81b1-181f-4e13-99fc-b82b74edc187==text}}\n\n*:arrow_right: Execution:* {{3b64d4ca-5d56-4c91-9add-89f513831f28==ed2a63fa-1a3f-449c-80be-690d606bcc1d==text}}\n\n*:arrow_right: Thought Leadership:* {{3b64d4ca-5d56-4c91-9add-89f513831f28==e8441f65-81f2-4c45-b887-e5d1b5936de6==text}}\n\n*:arrow_right: Leadership (or emerging):* {{3b64d4ca-5d56-4c91-9add-89f513831f28==be72ea52-f2bc-43b4-8795-cdec8f250ea9==text}}\n\n*:arrow_right: Presence:* {{3b64d4ca-5d56-4c91-9add-89f513831f28==885808cf-99c2-4cc5-87b0-dbb56f3fb4f1==text}}\n\n*:arrow_right: Where have they excelled?* ```{{3b64d4ca-5d56-4c91-9add-89f513831f28==8ce397c9-10d5-46d1-bd5c-4195df2a630c==text}} ```\n\n*:arrow_right: Where do they have room to grow?* ```{{3b64d4ca-5d56-4c91-9add-89f513831f28==4f769ff2-0e3a-4600-b577-ca745b468d90==text}} ```\n\n*:lock: Confidential Feedback?* ``` {{3b64d4ca-5d56-4c91-9add-89f513831f28==b3d60813-d4c1-4bcc-ad17-113e19259b64==text}}\n```"
+                    }
+                },
+                {
+                    "type": "dialog",
+                    "id": "0fc442f9-9c72-4568-af91-e3fc59cad512",
+                    "config": {
+                        "user": {
+                            "ref": "3b64d4ca-5d56-4c91-9add-89f513831f28==d3050841-b234-434d-b14d-cb1c8f7a318a==user"
+                        },
+                        "dialog_title": "How is Osano doing at...",
+                        "dialog_elements": [
+                            {
+                                "name": "37c665dc-c0fd-453e-a9f4-6fb2b0393747",
+                                "type": "select",
+                                "label": "Diversity & inclusion?",
+                                "options": [
+                                    {
+                                        "label": "Superb",
+                                        "value": "Superb"
+                                    },
+                                    {
+                                        "label": "Strongly exceeds expectations",
+                                        "value": "Strongly exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Exceeds expectations",
+                                        "value": "Exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Meets expectations",
+                                        "value": "Meets expectations"
+                                    },
+                                    {
+                                        "label": "Needs improvement",
+                                        "value": "Needs improvement"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "a939355a-c7d3-4f19-9a1c-6394355f15ab",
+                                "type": "select",
+                                "label": "Meeting business goals?",
+                                "options": [
+                                    {
+                                        "label": "Superb",
+                                        "value": "Superb"
+                                    },
+                                    {
+                                        "label": "Strongly exceeds expectations",
+                                        "value": "Strongly exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Exceeds expectations",
+                                        "value": "Exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Meets expectations",
+                                        "value": "Meets expectations"
+                                    },
+                                    {
+                                        "label": "Needs improvement",
+                                        "value": "Needs improvement"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "fcfb8007-7c0c-4694-aa32-9b601e026b79",
+                                "type": "select",
+                                "label": "Delighting customers?",
+                                "options": [
+                                    {
+                                        "label": "Superb",
+                                        "value": "Superb"
+                                    },
+                                    {
+                                        "label": "Strongly exceeds expectations",
+                                        "value": "Strongly exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Exceeds expectations",
+                                        "value": "Exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Meets expectations",
+                                        "value": "Meets expectations"
+                                    },
+                                    {
+                                        "label": "Needs improvement",
+                                        "value": "Needs improvement"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "4db526f9-cdf3-4ead-81fb-60c000b97175",
+                                "type": "select",
+                                "label": "Living up to our company principles?",
+                                "options": [
+                                    {
+                                        "label": "Superb",
+                                        "value": "Superb"
+                                    },
+                                    {
+                                        "label": "Strongly exceeds expectations",
+                                        "value": "Strongly exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Exceeds expectations",
+                                        "value": "Exceeds expectations"
+                                    },
+                                    {
+                                        "label": "Meets expectations",
+                                        "value": "Meets expectations"
+                                    },
+                                    {
+                                        "label": "Needs improvement",
+                                        "value": "Needs improvement"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "3c7a3b47-b35c-40b5-af09-53ac7bf06b9d",
+                                "type": "textarea",
+                                "label": "Any feedback for the company?",
+                                "optional": true
+                            }
+                        ],
+                        "dialog_submit_label": "",
+                        "delivery_button_label": "Continue",
+                        "delivery_message_text": "{{fa2665c7-636a-4982-a84c-9a9243d6e7c9==user.name}} just completed your quarterly performance review. Before sharing the responses with you, we'd like to understand broadly how you feel about Osano as a company.\n\nThis will take you less than :one: minute.\n\nThe responses to this section are aggregated so that we can understand at a leadership level whether our top goals are being met &amp; communicated effectively."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "6eb7e6c2-0a93-498b-8b95-b5241115116c",
+                    "config": {
+                        "channel": {
+                            "value": "G016UUS9JTH"
+                        },
+                        "has_button": false,
+                        "message_text": "{{3b64d4ca-5d56-4c91-9add-89f513831f28==d3050841-b234-434d-b14d-cb1c8f7a318a==user.name}} completed a rating of Osano Performance as a company:\n\n*:arrow_right: Diversity &amp; Inclusion:* {{0fc442f9-9c72-4568-af91-e3fc59cad512==37c665dc-c0fd-453e-a9f4-6fb2b0393747==text}}\n\n*:arrow_right: Meeting business goals:* {{0fc442f9-9c72-4568-af91-e3fc59cad512==a939355a-c7d3-4f19-9a1c-6394355f15ab==text}}\n\n*:arrow_right: Delighting customers:* {{0fc442f9-9c72-4568-af91-e3fc59cad512==fcfb8007-7c0c-4694-aa32-9b601e026b79==text}}\n\n*:arrow_right: Living up to principles:* {{0fc442f9-9c72-4568-af91-e3fc59cad512==4db526f9-cdf3-4ead-81fb-60c000b97175==text}}\n\n*:arrow_right: Freeform Feedback:*\n```  {{0fc442f9-9c72-4568-af91-e3fc59cad512==3c7a3b47-b35c-40b5-af09-53ac7bf06b9d==text}} \n```"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "ed409385-71de-40a9-9589-3e08d973ec25",
+                    "config": {
+                        "user": {
+                            "ref": "3b64d4ca-5d56-4c91-9add-89f513831f28==d3050841-b234-434d-b14d-cb1c8f7a318a==user"
+                        },
+                        "has_button": true,
+                        "button_label": "Show me the results",
+                        "message_text": "Awesome, thanks!\n\nHere is the feedback that {{fa2665c7-636a-4982-a84c-9a9243d6e7c9==user.name}} provided regarding your work during the most recent quarter:\n\n*These reviews focus on six questions:*\n\n*Osanoness:* _How well this person lives up to the core values that we set as a company._\n\n*Problem Solving:* _Analytical skills applied to work situations._\n\n*Execution:* _High quality work with little guidance. Delivering great work without a lot of hand-holding needed from managers and peers. Autonomy._\n\n*Thought Leadership:* _How much an employee is seen as a reference for a given niche or expertise._\n\n*Leadership (or emerging leadership):* _Even if the role does not require leadership, we want to see leadership skills developing such as taking the lead of problems, projects, being pro-active, and owning results personally._\n\n*Presence:* _The individual's ability to make themselves heard in a busy and growing organization._h a :lock: are confidential and will not be shared with your direct report._"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "cd494b4a-7428-4d3a-bf72-826e918fe9a9",
+                    "config": {
+                        "user": {
+                            "ref": "3b64d4ca-5d56-4c91-9add-89f513831f28==d3050841-b234-434d-b14d-cb1c8f7a318a==user"
+                        },
+                        "has_button": false,
+                        "message_text": "*:arrow_right: Osanoness:* {{3b64d4ca-5d56-4c91-9add-89f513831f28==3b339960-586b-455b-b07f-7f42f5995d94==text}}\n\n*:arrow_right: Problem Solving:* {{3b64d4ca-5d56-4c91-9add-89f513831f28==870b81b1-181f-4e13-99fc-b82b74edc187==text}}\n\n*:arrow_right: Execution:* {{3b64d4ca-5d56-4c91-9add-89f513831f28==ed2a63fa-1a3f-449c-80be-690d606bcc1d==text}}\n\n*:arrow_right: Thought Leadership:* {{3b64d4ca-5d56-4c91-9add-89f513831f28==e8441f65-81f2-4c45-b887-e5d1b5936de6==text}}\n\n*:arrow_right: Leadership (or emerging):* {{3b64d4ca-5d56-4c91-9add-89f513831f28==be72ea52-f2bc-43b4-8795-cdec8f250ea9==text}}\n\n*:arrow_right: Presence:* {{3b64d4ca-5d56-4c91-9add-89f513831f28==885808cf-99c2-4cc5-87b0-dbb56f3fb4f1==text}}\n\n*:arrow_right: Where have you excelled?* ```{{3b64d4ca-5d56-4c91-9add-89f513831f28==8ce397c9-10d5-46d1-bd5c-4195df2a630c==text}} ```\n\n*:arrow_right: Where do you have room to grow?* ```{{3b64d4ca-5d56-4c91-9add-89f513831f28==4f769ff2-0e3a-4600-b577-ca745b468d90==text}} ```\n\nPlease remember that all of us are imperfect and _this is not a judgment of character_. We all have opportunities to improve. :hugging_face: :rainbow: :thumb:\n\nIf you have any questions about this feedback, ask {{fa2665c7-636a-4982-a84c-9a9243d6e7c9==user}}  for clarification :slightly_smiling_face:"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "7b0a22b3-91bc-4856-99b7-f261c1a7067a",
+                    "config": {
+                        "channel": {
+                            "value": "G016UUS9JTH"
+                        },
+                        "has_button": false,
+                        "message_text": "Performance review was delivered to {{3b64d4ca-5d56-4c91-9add-89f513831f28==d3050841-b234-434d-b14d-cb1c8f7a318a==user.name}}"
+                    }
+                }
+            ]
+        }
+    }
+}
