@@ -1,0 +1,5 @@
+.idea
+*.code-workspace
+.DS_Store
+.vscode/
+.editorconfig
