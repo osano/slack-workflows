@@ -1,0 +1,564 @@
+{
+    "source_id": "311456347755395909",
+    "version": "1",
+    "workflow": {
+        "name": "Pam Beesly Bot - Slack",
+        "blueprint": {
+            "version": "1",
+            "trigger": {
+                "type": "member_joined_channel",
+                "id": "65c68f06-466d-420d-a2f1-ccf490282e32",
+                "config": {
+                    "channel": {
+                        "value": "C0181U52J2C"
+                    }
+                }
+            },
+            "steps": [
+                {
+                    "type": "message",
+                    "id": "a4fefbc9-37a4-4e92-9aee-c61d8790a02c",
+                    "config": {
+                        "channel": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==channel"
+                        },
+                        "has_button": false,
+                        "message_text": "Welcome {{65c68f06-466d-420d-a2f1-ccf490282e32==user}}  to the world famous Pam Beesly Slack Tutorial! Please go visit your SlackBot on the left hand Slack navigation by scrolling down to your `Direct Messages` section."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536",
+                    "config": {
+                        "user": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==user"
+                        },
+                        "has_button": true,
+                        "button_label": "Yes & I Feel Your Pain",
+                        "message_text": "Hi, I'm Pam and I'd like to give you a few tips on how to best use Slack at Osano. You may occasionally hear from my co-workers Jim Halpert :jim: &amp; Dwight Schrute :dwight:.\n\nOnce a quarter you'll hear from my boss Michael Scott. :prisonmichael: - He makes me tell you that he's the world best boss. :boss: ¯\\_(ツ)_/¯\n\nReady to get started?"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "14a98321-197b-49f8-89ca-ba98cb213c4c",
+                    "config": {
+                        "user": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==user"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Osano Slack Rules",
+                        "message_text": "At Osano we use Slack for almost everything, so understanding how we use it is really important to being a productive member of the team.\n\n:green_circle:  Be online during work hours. You're expected to be online, available, and responsive on Slack when working. Maybe set Slack to start when your computer turns on?\n\n:notification: Configure your Slack notifications so that you do not miss messages in important channels.\n\n:slack: Only use the official Slack software client, do not use alternative clients or the web version both for security and functionality reasons.\n\n:black_circle:  Go offline when you leave for the day or the weekend. Otherwise people will think you're working and may expect you to reply."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "2acfd94d-0f6d-4a71-8541-6bed0db60c0b",
+                    "config": {
+                        "user": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==user"
+                        },
+                        "has_button": true,
+                        "button_label": "Yes, I'm cool with those rules",
+                        "message_text": "Hopefully it goes without saying, but it's important to reiterate that Osano has a no a**hole policy. It's easy to forget that the avatar we're chatting with is a real live person. Well, except for me, I'm a :robot_face:.\n\nHere are a few simple rules we all live by in Slack:\n\n:hugging_face: be nice\n\n:crossed_fingers::skin-tone-2: be honest\n\n:nsfw: be appropriate\n\n:pride: be inclusive :blm:\n\nIf you have an issue with any of the above four requirements, please talk to your manager immediately before doing anything else. :facepalm: :arrow_right::door:\n\nIf anybody is ever inappropriate in any way towards you, please talk to your manager immediately."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "8307ddc7-8a8b-43a2-abd4-212644022204",
+                    "config": {
+                        "user": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==user"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Direct Messages",
+                        "message_text": "Slack's superpower is its ability to search. You can find conversations from a year ago where somebody probably asked the same question you're considering asking. Making sure the company wide Slack search is useful is the reason for most of our policies. :thumb:\n\nYou can immediately help your future co-workers by asking your questions in channels. This way when they join, if they have the same question, they can self-serve the answer instead of asking you!\n\nOsano is a remote only company. Because of this, nobody overhears your conversations with others. That \"overheard\" :ear:or \"water-cooler\":potable_water: conversation is important to the success of the company and to your career. Slack helps us replace those in-office conversations.\n\nIn Slack we have channels, direct messages, and group messages.\n\n:the_more_you_know: When should you use each one?"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "2fe287c9-9773-4a32-bd8c-3b39c66ff4a6",
+                    "config": {
+                        "user": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==user"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Group Messages",
+                        "message_text": "*Direct Messages*\n\nDirect messages are private, non-searchable, and nobody at the company will know that you've had the conversation. :shhh::homer-fade:\n\nDirect messages are great for questions that are personal such as HR related issues or concerns about a team member. :face_vomiting:  :beach_with_umbrella: :sos:\n\nTry to avoid direct messages unless absolutely necessary. :rotating_light:"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "ce03e320-43fc-45c8-ae4f-022266aec435",
+                    "config": {
+                        "user": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==user"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Channels",
+                        "message_text": "*Group Messages*\n\nGroup messages are just like direct messages, except with multiple people.\n\nThe problem with Group messages is that it's hard to find them later and nothing you say in those group messages is searchable or findable by anybody else at the company.\n\nGroup Messages - Not a great way to communicate. :no_entry_sign:\nGroup Messages - Not searchable. :no_entry_sign:\n\nTry to avoid using group messages. If we could forcibly disable group messages in our Slack instance, we would... but we can't. :cry:"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "f4d730e2-c2df-4e8b-977e-bff092b4d336",
+                    "config": {
+                        "user": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==user"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Tagging People",
+                        "message_text": "*Channels*\n\n:hash: Channels are where most of the activity happens in Slack.\n\nChannels are like a big room where people hang out. Different channels have different topics of discussion.\n\nYou've been automatically added to a handful of important channels that are relevant to your role.\n\nSubscribing to too many channels is the fastest way to get notification overload, so be cautious about subscribing to channels you don't really need to be in. :notification::notification::notification::notification::notification:\n\nMessages in channels are available to everybody else in the channel. For `Public` channels (public to the :osano: team), anybody in our Slack workspace can join and leave public channels at any time.\n\nThere are also `Private` channels which are identified by a :lock: prefixing the description. Private channels can only be joined by invitation and the content is only viewable and searchable by people who are in that channel.\n\nTo keep channels manageable, you can not create new channels. If you believe we need a new channel, please ask the Slack administrators. :darth_vader: :darth_maul:"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "008528d2-c908-494c-8df7-3c7c9b100525",
+                    "config": {
+                        "user": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==user"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Threads",
+                        "message_text": "In channels you tag people and bots by using the `@` symbol. Typing the `@` symbol will automatically bring up a list of people who you want to tag/alert about the message.\n\nIn channels it can be tempting to use the `@channel` and `@here` keywords to notify people. The `@channel` keyword alerts everybody who is a member whereas `@here` alerts channel members who are online right now. Usually these should be reserved for an announcement or if you urgently need a response from _anybody_ in the channel.\n\nSome people feel like using `@here` and `@channel` is a little bit like shouting. :loudspeaker:"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "77c96c76-4b64-48ae-8ffa-573f1942d26d",
+                    "config": {
+                        "user": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==user"
+                        },
+                        "has_button": false,
+                        "message_text": "I've just sent you another message right now, but you may not have seen it. :eyes:\n\nIn this chat, scroll :arrow_up:  to the the very first message I sent you at the beginning of this conversation.\n\nJust below that very first message you'll see the words `1 Reply` - Click the words `1 Reply` to continue this tutorial.\n\n_The rest of this tutorial will continue in the thread._"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "0b099dfa-6c4c-44e6-96f3-15caffb3c716",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Continue",
+                        "message_text": "Great work. You found the message {{65c68f06-466d-420d-a2f1-ccf490282e32==user}} !\n\nClick the button to continue!"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "45bc4f65-e832-495c-9e9d-925d492eb34f",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next",
+                        "message_text": "*Threads* are your friend. :hugging_face:\n\nThis is a thread. See how this message is a child of the first message I sent you?\n\nIn :slack: at :osano:, we use threads a lot. In fact, using threads isn't just handy, it's much more polite. :innocent: It's also a great way to keep channels from being a big mess of conversations."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "f9679a9a-075f-44f0-8ea4-2ca26da8227d",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": false,
+                        "message_text": "If you think of a channel as a room, a thread is the digital equivalent of pulling a couple of people into a corner so that you don't bother everybody else. They can still :ear::skin-tone-2: you if they want to, they can come join the conversation, but it doesn't interfere with their other conversation."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "564655f3-d7e6-404a-be66-4d76d4814214",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Tagging",
+                        "message_text": "Often when your initial reaction is to fire up a group message or DM, it's better to do it as a threaded conversation, unless what you're discussing is secret. :eyes:\n\nThe Lesson? Use. Threads. Often. :thumb:"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "9e3e4fe2-b471-46b4-9fd9-5735cf968b62",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - The Wrong Way To Tag",
+                        "message_text": "Tagging the individual whose attention you are trying to get is important in channels. Many people choose to mute notifications in a channel unless they are mentioned.\n\nLets take a look at some examples:"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "c91db1c3-96f6-49b7-a749-d2a112a9180b",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Does Joe Reply?",
+                        "message_text": "*Example of Bad Tagging:*\n\n:lionel:`Hey Joe I could use some help with this TPS report. I've been working on it all night long.`"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "8e9320c3-1b32-471c-8d8f-1464720614b0",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "What happens next?",
+                        "message_text": "No.\n\n_20 minutes later you feel ignored since Joe has not replied_\n\n:lionel:`Joe? Hello?`\n\n:lionel:`Anybody? Hello?`"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "c6d3d598-bbc8-4f95-885f-b813109a046f",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "And then...",
+                        "message_text": "_30 minutes later you feel broken hearted and alone..._\n:lionel: `Joe? I don't wanna lose you.`\n:lionel:`Argh... I give up!`"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "adb44fb8-1580-40ea-a564-6d599a35309e",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - The Right Way To Tag",
+                        "message_text": "_2 hours later you give up and maybe you contact Joe on a direct message which is not how Osano management wants you to use Slack._\n\nNow you feel :disappointed: and you're wasting precious time. Why isn't Joe replying to you? *It's because the way you're asking is not alerting him.*"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "d410c0d5-441f-41ac-aaa0-e2853725629c",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next",
+                        "message_text": "*Example of Good Slack Tagging:*\n\n:lionel:`Hey @Joe I could use some help with this TPS report. I can't find the data I need.`\n\n_Joe gets alerted about your question and replies *in a thread* because he's also completed this tutorial_"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "c19dfeef-c1cb-4c27-a2f5-cc2c818c9171",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Nagging",
+                        "message_text": ":joe:`Hey Lionel whats up? Tiger Protection System reports are tough. Let me help you`\n\n_Your question got answered quickly._\n\nBut what if it didn't? :scream_cat:"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "7058a984-ddb4-403d-8e83-883c03e8dbc7",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": false,
+                        "message_text": "If they aren't replying to you, it's possible they are in a meeting or walking the dog... Who knows really ¯\\_(ツ)_/¯ but usually ignoring somebody who tags you is an innocent mistake.\n\nUsually if somebody hasn't answered you the first thing to do is to check whether they are online. You can see if they are online because they will have a :green_circle: next to their name."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "a8d969ce-4035-4878-871e-b1fd07dc0c61",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next",
+                        "message_text": "If they are online then the next thing to do is to open a thread on  the original message you sent and just type a `?` in the dialog. This is a polite way of letting them know you're waiting. Don't do this more than once and give them at least 10 minutes before bugging them with that `?`."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "791829f8-3275-4f1d-b293-211606b18a7e",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next",
+                        "message_text": "If they *still* haven't replied to you then odds are they are super busy. Now is when you set  a reminder _for them_.\n\nTo do this, *open the thread* and use Slack's built in `/remind` feature. Just type *in the thread*  something like this: `/remind @joe I need your help here in 30 minutes.`"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "625adc00-3c26-41b1-b332-7ef10d821c00",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next",
+                        "message_text": "_30 minutes later joe gets a reminder with a link to that thread.\n\nIf Joe is offline in a meeting, then perhaps you should remind yourself to follow up instead? You can do that with the same approach in that thread: `/remind me to check in with Joe about the TPS reports in 30 minutes`"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "72f57dc0-5a35-4011-93b2-2670987110a7",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Emojis",
+                        "message_text": "_30 minutes later you will receive a reminder to ping Joe again._\n\nIf after all of that you still can't get Joe's attention, let your manager know. Your managers job is to solve for obstacles to your  success, and team members who ignore you are obstacles."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "3a313686-0f7b-4623-b934-0b5f972cfb36",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next",
+                        "message_text": "They say a :frame_with_picture: is worth :one: :zero: :zero: :zero:  words. At :osano: we agree!!!\n\nYou'll notice that we often use emojis in our conversations, we use emoji's to react to messages, and sometimes we even use Giphy to express a more complex emotion. You don't have to do this, but it's fun and most people at :osano: do."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "958c5b5d-ecc9-4c16-ba4a-f8ed21f80589",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - GIFs and Giphy",
+                        "message_text": "Emoji's are easy to use, anytime you're typing just type the `:` sign and a word... So for example `:osano:` makes the :osano: show up and `:smile:` gives you :smile: - We have lots of non-standard emojis that you can have fun with.\n\n:the_more_you_know:  Did you know? You can even upload custom emojis. Just keep it PG-13."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "4f6abf81-e878-4aa5-9bff-c96871f75d74",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next",
+                        "message_text": "We also use GIFs or animated pictures. Usually in response to something awesome happening, but you can use them as you see fit.\n\nTo show a GIF, all you have to do is type `/giphy` folowed by whatever emotion you want to share. Giphy picks a random image to share that matches your search."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "d8e43df7-8315-4c12-82d4-1996d7440bb8",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": false,
+                        "message_text": "For example typing `/giphy dancing` will usually show you a person dancing. If you don't love the image it chose, click the `Shuffle` button to see a new one. When you do like it, click `Send`. Until you click `Send` on the giphy bot, nobody can see your message."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "2620680b-0cff-4ba7-ba94-0f4082407a06",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Bots",
+                        "message_text": "Give it a try now in this conversation. I'll wait."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "114ff394-0e3f-42b2-b84b-85ccfe9669ec",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "I'm Sad For You Pam",
+                        "message_text": "We also use a lot of :robot_face: bots. Bots are little automated non-sentient programs who push information at the right time about something at the business.\n\nFor example, I'm a bot. I was triggered because you joined the `#tutorial-slack` channel. Sadly I am not the real Pam Beesly from The Office."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "835272dd-d21b-4fd4-b925-3ee5ac83a217",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Oh. Ok.",
+                        "message_text": "That's nice of you, but I don't have any feelings so I can't appreciate your kind words."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "94990ed0-38ca-41df-b161-1d6f5e3b651b",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": false,
+                        "message_text": "Osano has bots that:\n* announce new customer deals (please celebrate when that happens!)\n*  remind you of things like calendar events or business alerts\n* alert you about social media posts by the company (please go retweet/share/whatever)"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "3b3f2c27-3327-47c8-bddd-ae2697f9b8f7",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Nifty",
+                        "message_text": "Some of our bots also do really handy things, like updating your Slack Status. If you join a Zoom meeting at Osano, you'll immediately see a :zoom-auto-meeting-status:  icon show up next to your status, so will everybody else, now they know you're in a meeting. When you leave the meeting, the bot will clear your status."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "e4d94b98-7002-45c2-bcdb-d981769c2886",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Favorites",
+                        "message_text": "Google Calendar is also integrated, so if you have a meeting scheduled your status should change to a :calendar:  icon.\n\nFor security reasons, you can not create or invite new bots. If you believe we need a new bot, please ask the Slack administrators."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "8b9dd1d2-3331-4205-890b-ac36254fb9e6",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Channels",
+                        "message_text": "You are probably going to find that you end up interacting with a small number of channels most of the time. You should `star` those channels.\n\nStarred channels show up in the top left side of Slack so they are much easier to find. In any channel, just click the :star: to star it."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "52640949-edd8-4cbe-8eaa-abf0a6b15f27",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Tell Me More Pam!",
+                        "message_text": "It may seem like we have a lot of channels at Osano, but actually we don't have many. Legend has it that some companies have hundreds of channels. That's unmanageable! :open_mouth:\n\nWe do have a few special channels though..."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "198b49c6-fc3f-4cf2-b8fc-27e323641e50",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Got It",
+                        "message_text": "`@announcements ` is where the CEO makes important company announcements.\n\n`@team-w2` is where you'll see discussions about things like holidays, team events, etc. The `w2` means that everybody in that channel is a full time employee.\n\n`#zlog-` any channels beginning with `#zlog-` are going to get lots of activity."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "0d422503-17df-4fd7-987f-f713bee44ccd",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next - Groups",
+                        "message_text": ":trophy: and last but not least... <#CBACHMW82|chitchat> is a channel where we talk about random stuff. Sometimes work, sometimes jokes. We have :older_man::skin-tone-2: dad bots that share bad jokes, bots that announce :cat: facts, bots that announce new sales... You'll get a feel for it, but the <#CBACHMW82|chitchat> channel is a fun place to chat."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "5b68802e-94f6-4389-b397-3d8314bd3d6f",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Next",
+                        "message_text": "And the very last part of this lengthy tutorial is groups. Groups are a collection of people. You can tag groups the same way you tag people with the `@` symbol. You can only tag a group if that group belongs to the channel you're chatting in.\n\nJust like with `@here` and `@channel` use groups judiciously."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "d98bd2b6-96cd-44fd-a3c6-32c8c85602a6",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": false,
+                        "message_text": "Here are a few of the groups we use:\n`@engineers` - Everybody on the engineering team\n`@sellers` - Everybody on the sales team\n`@marketers` - Everybody on the marketing team\n`@customer` - Everybody in a support or success role\n`@core` - Everybody who is a full time employee at Osano."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "ba4003aa-1e00-4a79-8866-a2bfc942e5d3",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": true,
+                        "button_label": "Is there more?",
+                        "message_text": "_tagging `@core` is not something you should do. ever._:no_mouth:\n\nYou can not create new groups. If you believe we need a new group, please ask the Slack administrators."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "01665c2c-a3fe-42b3-893e-92fd80145a7a",
+                    "config": {
+                        "thread": {
+                            "ref": "d3ae7aab-3437-4415-bd2c-4e6cfc86d536==message_data"
+                        },
+                        "has_button": false,
+                        "message_text": "Hint: Look over at the main SlackBot chat and scroll down to the last message..."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "aff573a6-eb7e-4eb1-bc75-9343b8aad464",
+                    "config": {
+                        "user": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==user"
+                        },
+                        "has_button": true,
+                        "button_label": "Be Done With This Tutorial",
+                        "message_text": "Nope, no more :slightly_smiling_face:\n\nThat's everything you need to be a :slack: expert at :osano:. If you ever forget, you can always come back to the direct message with SlackBot to see the history of our conversation... and of course don't be afraid to ask questions.\n\nEverybody who joins Osano starts out by making some mistakes in their approach to Slack. Don't worry about it, try your best and if for some reason what you're doing is annoying people, we'll politely pull you aside in a direct message to let you know :slightly_smiling_face: :hugging_face:\n\nSay hi to Jim &amp; Dwight when you hear from them.... and no matter what, if Michael Scott :boss: notifies, you, it's *important*.\n\nNow go forth, make some mistakes, and learn! :no_good::skin-tone-2::wave::skin-tone-2: :thumb:"
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "14b831bf-22a9-4894-8354-44a37fdf1f20",
+                    "config": {
+                        "channel": {
+                            "ref": "65c68f06-466d-420d-a2f1-ccf490282e32==channel"
+                        },
+                        "has_button": false,
+                        "message_text": "{{65c68f06-466d-420d-a2f1-ccf490282e32==user}} great job finishing this ~lengthy~ awesome Slack tutorial! Please leave this channel now by replying to this message with the phrase `/leave`. Then push send.\n\nIf you ever want to start the tutorial again, re-join the <#C0181U52J2C|tutorial-slack> channel"
+                    }
+                }
+            ]
+        }
+    }
+}
