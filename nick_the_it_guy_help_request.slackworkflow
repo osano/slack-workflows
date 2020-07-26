@@ -1,0 +1,602 @@
+{
+    "workflow_description": "This workflow is triggered from our helpdesk channel for the purposes of asking for IT help relating to systems or computer problems.",
+    "source_id": "312497750170154955",
+    "version": "1",
+    "workflow": {
+        "name": "Nick the IT Guy - Help Request",
+        "blueprint": {
+            "version": "1",
+            "trigger": {
+                "type": "channel_action",
+                "id": "fb05f7d6-fda0-4a37-857f-59a6e79b0593",
+                "config": {
+                    "name": "New Help Desk Ticket",
+                    "channels": [
+                        "C017APJ4DLP"
+                    ],
+                    "callback_id": "ba9c1262-72fb-4353-a1eb-f0c415a38fc3",
+                    "description": "New Help Desk Ticket"
+                }
+            },
+            "steps": [
+                {
+                    "type": "dialog",
+                    "id": "83612627-8ab7-40e1-b2c7-6e823cea5099",
+                    "config": {
+                        "dialog_title": "Help Desk Request",
+                        "dialog_elements": [
+                            {
+                                "name": "82c8b98b-6c9a-4e42-b2df-7b81d6ddc09a",
+                                "type": "text",
+                                "label": "Summary of your request",
+                                "subtype": "",
+                                "optional": false,
+                                "placeholder": ""
+                            },
+                            {
+                                "name": "dba87f07-f341-420d-985e-6c6bc686cb0a",
+                                "type": "select",
+                                "label": "Request category",
+                                "options": [
+                                    {
+                                        "label": "Software Access",
+                                        "value": "Software Access"
+                                    },
+                                    {
+                                        "label": "Computer Issue",
+                                        "value": "Computer Issue"
+                                    },
+                                    {
+                                        "label": "Equipment Request",
+                                        "value": "Equipment Request"
+                                    },
+                                    {
+                                        "label": "Other",
+                                        "value": "Other"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "4e770d7b-8b8e-45b2-afd2-c92c77ea737c",
+                                "type": "select",
+                                "label": "Urgency of your request",
+                                "options": [
+                                    {
+                                        "label": ":white_circle: Not Urgent",
+                                        "value": ":white_circle: Not Urgent"
+                                    },
+                                    {
+                                        "label": ":large_blue_circle: Timely, but Not Urgent",
+                                        "value": ":large_blue_circle: Timely, but Not Urgent"
+                                    },
+                                    {
+                                        "label": ":red_circle: Urgent",
+                                        "value": ":red_circle: Urgent"
+                                    }
+                                ],
+                                "optional": false,
+                                "data_source": "static"
+                            },
+                            {
+                                "name": "c4b5e257-8cde-4a1b-8b44-c0043d9fda01",
+                                "type": "textarea",
+                                "label": "Anything else we should know",
+                                "optional": true
+                            }
+                        ],
+                        "dialog_submit_label": "",
+                        "delivery_button_label": "Open Form",
+                        "delivery_message_text": "Hello! To get started, please fill out this form."
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "1799a07b-0315-42cb-9c6c-027824f01d7d",
+                    "config": {
+                        "user": {
+                            "ref": "fb05f7d6-fda0-4a37-857f-59a6e79b0593==user"
+                        },
+                        "has_button": false,
+                        "message_text": "Thanks for submitting your request!\n\nWe’ll get back to you as soon as we can based on the urgency of your request.",
+                        "message_blocks": [
+                            {
+                                "type": "rich_text",
+                                "elements": [
+                                    {
+                                        "type": "rich_text_section",
+                                        "elements": [
+                                            {
+                                                "text": "Thanks for submitting your request!\n\nWe’ll get back to you as soon as we can based on the urgency of your request.",
+                                                "type": "text"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "5b27e445-6f05-4a4d-80f3-564c81f16f2c",
+                    "config": {
+                        "channel": {
+                            "value": "G017JPK5LG6"
+                        },
+                        "has_button": true,
+                        "button_label": "Take this Request",
+                        "message_text": "New Help Desk Request <!channel> from {{fb05f7d6-fda0-4a37-857f-59a6e79b0593==user}}\n\n:stoplight: Urgency: {{83612627-8ab7-40e1-b2c7-6e823cea5099==4e770d7b-8b8e-45b2-afd2-c92c77ea737c==text}}\n\n:interrobang: Summary: {{83612627-8ab7-40e1-b2c7-6e823cea5099==82c8b98b-6c9a-4e42-b2df-7b81d6ddc09a==text}}\n\n:package: Category: {{83612627-8ab7-40e1-b2c7-6e823cea5099==dba87f07-f341-420d-985e-6c6bc686cb0a==text}}\n\n:writing_hand::skin-tone-2: Details: {{83612627-8ab7-40e1-b2c7-6e823cea5099==c4b5e257-8cde-4a1b-8b44-c0043d9fda01==text}}",
+                        "message_blocks": [
+                            {
+                                "type": "rich_text",
+                                "elements": [
+                                    {
+                                        "type": "rich_text_section",
+                                        "elements": [
+                                            {
+                                                "text": "New Help Desk Request ",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "type": "broadcast",
+                                                "range": "channel",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " from ",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "id": "fb05f7d6-fda0-4a37-857f-59a6e79b0593==user",
+                                                "type": "workflowtoken",
+                                                "style": null,
+                                                "property": "",
+                                                "data_type": "user"
+                                            },
+                                            {
+                                                "text": "\n\n",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "stoplight",
+                                                "type": "emoji",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " Urgency:",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "id": "83612627-8ab7-40e1-b2c7-6e823cea5099==4e770d7b-8b8e-45b2-afd2-c92c77ea737c==text",
+                                                "type": "workflowtoken",
+                                                "style": null,
+                                                "property": "",
+                                                "data_type": "text"
+                                            },
+                                            {
+                                                "text": "\n\n",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "interrobang",
+                                                "type": "emoji",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " Summary:",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "id": "83612627-8ab7-40e1-b2c7-6e823cea5099==82c8b98b-6c9a-4e42-b2df-7b81d6ddc09a==text",
+                                                "type": "workflowtoken",
+                                                "style": null,
+                                                "property": "",
+                                                "data_type": "text"
+                                            },
+                                            {
+                                                "text": "\n\n",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "package",
+                                                "type": "emoji",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " Category:",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "id": "83612627-8ab7-40e1-b2c7-6e823cea5099==dba87f07-f341-420d-985e-6c6bc686cb0a==text",
+                                                "type": "workflowtoken",
+                                                "style": null,
+                                                "property": "",
+                                                "data_type": "text"
+                                            },
+                                            {
+                                                "text": "\n\n",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "writing_hand",
+                                                "type": "emoji",
+                                                "skin_tone": 2
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "text": "Details:",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "id": "83612627-8ab7-40e1-b2c7-6e823cea5099==c4b5e257-8cde-4a1b-8b44-c0043d9fda01==text",
+                                                "type": "workflowtoken",
+                                                "style": null,
+                                                "property": "",
+                                                "data_type": "text"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "dialog",
+                    "id": "b2b28107-ce01-46b1-801c-2891052c7433",
+                    "config": {
+                        "user": {
+                            "ref": "5b27e445-6f05-4a4d-80f3-564c81f16f2c==user_clicked"
+                        },
+                        "dialog_title": "Request Reponse",
+                        "results_thread": {
+                            "ref": "5b27e445-6f05-4a4d-80f3-564c81f16f2c==message_data"
+                        },
+                        "dialog_elements": [
+                            {
+                                "name": "cc6393c6-d829-4c74-92f3-fbc480f64cf0",
+                                "type": "textarea",
+                                "label": "Response",
+                                "optional": false
+                            }
+                        ],
+                        "dialog_submit_label": "",
+                        "delivery_button_label": "Respond to Request",
+                        "delivery_message_text": ":sos: Here is the help desk ticket from {{fb05f7d6-fda0-4a37-857f-59a6e79b0593==user.name}}\n\nYou took ownership of this ticket. Please make sure to handle it quickly.\n\n:stoplight: Urgency: {{83612627-8ab7-40e1-b2c7-6e823cea5099==4e770d7b-8b8e-45b2-afd2-c92c77ea737c==text}}\n\n:interrobang: Request: {{83612627-8ab7-40e1-b2c7-6e823cea5099==82c8b98b-6c9a-4e42-b2df-7b81d6ddc09a==text}}\n\n:package: Category: {{83612627-8ab7-40e1-b2c7-6e823cea5099==dba87f07-f341-420d-985e-6c6bc686cb0a==text}}\n\n:writing_hand::skin-tone-2: Details: {{83612627-8ab7-40e1-b2c7-6e823cea5099==c4b5e257-8cde-4a1b-8b44-c0043d9fda01==text}}",
+                        "delivery_dialog_blocks": [
+                            {
+                                "type": "rich_text",
+                                "elements": [
+                                    {
+                                        "type": "rich_text_section",
+                                        "elements": [
+                                            {
+                                                "name": "sos",
+                                                "type": "emoji",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " Here is the help desk ticket from ",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "id": "fb05f7d6-fda0-4a37-857f-59a6e79b0593==user",
+                                                "type": "workflowtoken",
+                                                "style": {
+                                                    "bold": true
+                                                },
+                                                "property": "name",
+                                                "data_type": "user"
+                                            },
+                                            {
+                                                "text": "\n\n",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "text": "You took ownership of this ticket. Please make sure to handle it quickly.",
+                                                "type": "text",
+                                                "style": {
+                                                    "italic": true
+                                                }
+                                            },
+                                            {
+                                                "text": "\n\n",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "stoplight",
+                                                "type": "emoji"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "text": "Urgency:",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "id": "83612627-8ab7-40e1-b2c7-6e823cea5099==4e770d7b-8b8e-45b2-afd2-c92c77ea737c==text",
+                                                "type": "workflowtoken",
+                                                "style": null,
+                                                "property": "",
+                                                "data_type": "text"
+                                            },
+                                            {
+                                                "text": "\n\n",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "interrobang",
+                                                "type": "emoji"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "text": "Request:",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "id": "83612627-8ab7-40e1-b2c7-6e823cea5099==82c8b98b-6c9a-4e42-b2df-7b81d6ddc09a==text",
+                                                "type": "workflowtoken",
+                                                "style": null,
+                                                "property": "",
+                                                "data_type": "text"
+                                            },
+                                            {
+                                                "text": "\n\n",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "package",
+                                                "type": "emoji"
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "text": "Category:",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "id": "83612627-8ab7-40e1-b2c7-6e823cea5099==dba87f07-f341-420d-985e-6c6bc686cb0a==text",
+                                                "type": "workflowtoken",
+                                                "style": null,
+                                                "property": "",
+                                                "data_type": "text"
+                                            },
+                                            {
+                                                "text": "\n\n",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "writing_hand",
+                                                "type": "emoji",
+                                                "skin_tone": 2
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "text": "Details:",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": " ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "id": "83612627-8ab7-40e1-b2c7-6e823cea5099==c4b5e257-8cde-4a1b-8b44-c0043d9fda01==text",
+                                                "type": "workflowtoken",
+                                                "style": null,
+                                                "property": "",
+                                                "data_type": "text"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "6faadf8d-bcb7-450b-ae72-ca75e21d2504",
+                    "config": {
+                        "thread": {
+                            "ref": "5b27e445-6f05-4a4d-80f3-564c81f16f2c==message_data"
+                        },
+                        "has_button": false,
+                        "message_text": ":white_check_mark: This ticket has been completed.",
+                        "message_blocks": [
+                            {
+                                "type": "rich_text",
+                                "elements": [
+                                    {
+                                        "type": "rich_text_section",
+                                        "elements": [
+                                            {
+                                                "name": "white_check_mark",
+                                                "type": "emoji"
+                                            },
+                                            {
+                                                "text": " This ticket has been completed.",
+                                                "type": "text"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "message",
+                    "id": "997a14ff-72a8-4670-a4da-b242e417602d",
+                    "config": {
+                        "thread": {
+                            "ref": "1799a07b-0315-42cb-9c6c-027824f01d7d==message_data"
+                        },
+                        "has_button": false,
+                        "message_text": ":white_check_mark: Hey {{fb05f7d6-fda0-4a37-857f-59a6e79b0593==user}} your request has received a response. :thumb:\n\nResponse:\n{{b2b28107-ce01-46b1-801c-2891052c7433==cc6393c6-d829-4c74-92f3-fbc480f64cf0==text}}\n\nIf this does not resolve your issue, please open a new ticket in <#C017APJ4DLP|helpdesk>",
+                        "message_blocks": [
+                            {
+                                "type": "rich_text",
+                                "elements": [
+                                    {
+                                        "type": "rich_text_section",
+                                        "elements": [
+                                            {
+                                                "name": "white_check_mark",
+                                                "type": "emoji"
+                                            },
+                                            {
+                                                "text": " Hey ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "id": "fb05f7d6-fda0-4a37-857f-59a6e79b0593==user",
+                                                "type": "workflowtoken",
+                                                "style": null,
+                                                "property": "",
+                                                "data_type": "user"
+                                            },
+                                            {
+                                                "text": " your request has received a response. ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "name": "thumb",
+                                                "type": "emoji"
+                                            },
+                                            {
+                                                "text": "\n\n",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "text": "Response:",
+                                                "type": "text",
+                                                "style": {
+                                                    "bold": true
+                                                }
+                                            },
+                                            {
+                                                "text": "\n",
+                                                "type": "text"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "rich_text_preformatted",
+                                        "elements": [
+                                            {
+                                                "id": "b2b28107-ce01-46b1-801c-2891052c7433==cc6393c6-d829-4c74-92f3-fbc480f64cf0==text",
+                                                "type": "workflowtoken",
+                                                "style": null,
+                                                "property": "",
+                                                "data_type": "text"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "rich_text_section",
+                                        "elements": [
+                                            {
+                                                "text": "\nIf this does not resolve your issue, please open a new ticket in ",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "type": "channel",
+                                                "channel_id": "C017APJ4DLP"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
